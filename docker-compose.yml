@@ -3,7 +3,7 @@ version: '2'
 services:
   web:
     image: 'traefik'
-    command: --web --docker --docker.domain=docker.localhost --logLevel=DEBUG
+    command: --web --docker --docker.endpoint=tcp://${LOCAL_IP_ADDRESS}:4000 --docker.domain=docker.localhost --logLevel=DEBUG
     ports:
       - "80:80"
       - "8080:8080"
